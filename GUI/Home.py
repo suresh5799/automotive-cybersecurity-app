@@ -15,47 +15,48 @@ def extract_text_from_pdf(file_path,goal_name):
         #for file in os.listdir(upload):
         if file.endswith(".pdf"):
             #file path = os.path.join(upload, file)
-            with open(file_path, "rb") as pdf_file:reader = pdf.pdfReader(pdf_file)
-            text=""
+            with open(file_path, "rb") as pdf_file:
+                    reader = pdf.PdfReader(pdf_file)
+                    text=""
 
-            # Extract text from all pages
-            for page in reader.pages:
-                text += page.extract_text()+ "\n"
-
-            # Search for the goal name
-            if goal_name.lower() in text.lower():
-                start_index = text.lower().find(goal_name,lower())    # Find goal name
-                #print(start_index)
-
-                # Extract from goal onward
-                extracted_text = text[start_index:]
-                lines = extracted_text.splitlines()
-
-                #Step 2: select the first line
-                first_line = lines[0]
-                a=first_line.lower()
-                b=a.replace("  ","")
-                #print(f"{b,goal_name}")
-                t=o
-                if goal_name == b:
-                    l=[]
-                    c=O
-                    # Extract only the requirements (until next goal starts)
-                    for line in extracted_text.splitlines():
-                        if line.strip()=="":
-                            c=c+1 
-                        elif c==2:
-                            break
+                    # Extract text from all pages
+                    for page in reader.pages:
+                        text += page.extract_text()+ "\n"
+        
+                    # Search for the goal name
+                    if goal_name.lower() in text.lower():
+                        start_index = text.lower().find(goal_name.lower())    # Find goal name
+                        #print(start_index)
+        
+                        # Extract from goal onward
+                        extracted_text = text[start_index:]
+                        lines = extracted_text.splitlines()
+        
+                        #Step 2: select the first line
+                        first_line = lines[0]
+                        a=first_line.lower()
+                        b=a.replace("  ","")
+                        #print(f"{b,goal_name}")
+                        t=0
+                        if goal_name == b:
+                            l=[]
+                            c=0
+                            # Extract only the requirements (until next goal starts)
+                            for line in extracted_text.splitlines():
+                                if line.strip()=="":
+                                    c=c+1 
+                                elif c==2:
+                                    break
+                                else:
+                                    l.append(line)
+                            #All the requirements and goal name are prestent in the l list[]
+                            results[file] =l
+        
+                            return results
+        
                         else:
-                            l.append(line)
-                    #All the requirements and goal name are prestent in the l list[]
-                    results[file] =l
-
-                    return results
-
-                else:
-                    #if goal_name!=b:
-                    t=t+1
+                            #if goal_name!=b:
+                            t=t+1
 
 error=[]
 
@@ -87,7 +88,7 @@ if st.button("Search"):
                     #st.warning(f"No matching goal found in this:{file}")
 
             for a in error:
-                st.error(f"No matching goal'found in this file:{a}")
+                st.error(f"No matching goal found in this file:{a}")
 
         #else:
             #st.error("Kindly Upload a File before initiating the search")
