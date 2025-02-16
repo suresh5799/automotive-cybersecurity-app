@@ -8,7 +8,7 @@ upload ="uploaded_file"
 #os.makedirs(upload, exist_ok=True)
 st.set_page_config(page_title="cybersecurity",page_icon="🔐",)
 st.logo("images/auto2.jpg")
-st.sidebar.success("select a page above")
+st.sidebar.success("Select a Page Above")
 
 def extract_text_from_pdf(file_path,goal_name):
         results={}
@@ -69,7 +69,7 @@ goal_name = st.text_input("Enter Goal Name (e.g., Secure Authenticatio or secure
 if st.button("Search"):
     if goal_name:
         if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
-            st.error("Kindly Upload a File before initiating the search")
+            st.error("Kindly Upload a File before initializing the search")
             st.error("No files uploaded. Please upload files first on the Fileuploader Page.")
                 
         else:
