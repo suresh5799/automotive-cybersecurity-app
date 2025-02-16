@@ -66,8 +66,11 @@ goal_name = st.text_input("Enter Goal Name (e.g., Secure Authenticatio or secure
 
 if st.button("Search"):
     if goal_name:
-        if upload:
-            
+        if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
+            st.error("Kindly Upload a File before initiating the search")
+            st.error("No files uploaded. Please upload files first on the Fileuploader Page.")
+                
+        else:
             for file in os.listdir(upload):
             #if file:
                 file_path = os.path.join(upload,file)
@@ -81,14 +84,12 @@ if st.button("Search"):
                 else:
                     error.append(file)
                     #st.warning(f"No matching goal found in this:{file}")
-            #else:
-               # st.error("Kindly Upload a File before initiating the search")
 
             for a in error:
                 st.error(f"No matching goal'found in this file:{a}")
 
-        else:
-            st.error("Kindly Upload a File before initiating the search")
+        #else:
+            #st.error("Kindly Upload a File before initiating the search")
 
     else:
         st.error("First Enter the Goal Name")
