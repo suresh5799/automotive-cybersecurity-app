@@ -7,6 +7,7 @@ import os
 upload ="uploaded_file"
 #os.makedirs(upload, exist_ok=True)
 st.set_page_config(page_title="cybersecurity",page_icon="🔐",)
+st.logo("images/auto2.jpg")
 st.sidebar.success("select a page above")
 
 def extract_text_from_pdf(file_path,goal_name):
