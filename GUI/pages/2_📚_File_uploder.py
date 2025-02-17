@@ -1,6 +1,7 @@
 import streamlit as st
 import PyPDF2 as pdf
 import os
+import subprocess
 
 
 # Function to commit and push files to GitHub
