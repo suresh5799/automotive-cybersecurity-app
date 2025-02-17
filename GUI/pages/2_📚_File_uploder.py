@@ -40,7 +40,7 @@ if a:
             else:
                 with open(file_path,"wb") as f:
                     f.write(uploaded_file.getbuffer())
-                    st.session_stats["uploaded_file"]=uploaded_file
+                    st.session_state["uploaded_file"]=uploaded_file
                 st.success(f"File uploaded successfully: {uploaded_file.name}")
 
     else:
