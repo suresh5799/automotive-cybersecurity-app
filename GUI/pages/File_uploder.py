@@ -25,7 +25,7 @@ if a=="40037840" or a=="40037842" or a=="40037797":
 
         with open(file_path,"wb") as f:
             f.write(uploaded_file.getbuffer())
-            st.session_stats["uploaded_file"]=uploaded_file
+            st.session_state["uploaded_file"]=uploaded_file
             st.success(f"File uploaded successfully: {uploaded_file.name}")
 
 else:
