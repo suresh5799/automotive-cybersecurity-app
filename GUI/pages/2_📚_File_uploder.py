@@ -3,7 +3,11 @@ import PyPDF2 as pdf
 import os
 
 
-
+# Function to commit and push files to GitHub
+def push_to_github(file_path):
+    os.system("git add .")
+    os.system(f'git commit -m "uploaded {file_path}"')
+    os.system("git push origin main")  # Change branch name if needed
 
 #it willcreate a folder for storing a files
 upload = "uploaded_file"
@@ -42,6 +46,8 @@ if a:
                     f.write(uploaded_file.getbuffer())
                     st.session_state["uploaded_file"]=uploaded_file
                 st.success(f"File uploaded successfully: {uploaded_file.name}")
+                # Push changes to GitHub
+                push_to_github(file_path)
 
     else:
         st.error("Unauthorized! Only specific users can upload files.")
