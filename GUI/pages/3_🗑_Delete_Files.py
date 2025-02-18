@@ -26,7 +26,7 @@ def list_files():
 st.header("Enter yout PS Number for Delete a files")
 
 a=st.text_input("PS Number",key="ps_number")
-user=["40037840","40037842","40037797"]
+user=["40037840","40037842","40037797","40036090"]
 
 if a:
     if a in user:
