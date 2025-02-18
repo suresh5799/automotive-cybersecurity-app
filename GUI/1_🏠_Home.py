@@ -61,7 +61,7 @@ def extract_text_from_pdf(file_path,goal_name):
 st.header("Enter your PS Number for Search.")
 
 a=st.text_input("PS Number",key="ps_number")
-user=["40037840","40037842","40037797"]
+user=["40037840","40037842","40037797","40036090"]
 lfiles=os.listdir(upload) 
 
 if a:
