@@ -21,7 +21,7 @@ st.header("Enter your ps Number for Uploding pdf")
 #st.header("Enter your PS Number for Search.")
 
 a=st.text_input("PS Number",key="ps_number")
-user=["40037840","40037842","40037797"]
+user=["40037840","40037842","40037797","40036090"]
 
 #a=st.text_input("Ps Number",key="ps_number")
 
