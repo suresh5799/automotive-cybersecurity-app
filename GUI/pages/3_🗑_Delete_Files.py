@@ -56,7 +56,7 @@ if a:
                 else:
                     st.warning("Please Enter a filename to delete.")
         else:
-            st.waring("The floder does not exist yet. Please upload a file using Fileuploader Page.")
+            st.warning("The floder does not exist yet. Please upload a file using Fileuploader Page.")
     else:
         st.error("Unauthorized! Only specific users can upload files.")
 
