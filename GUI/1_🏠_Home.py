@@ -25,7 +25,7 @@ def extract_text_from_pdf(file_path,goal_name):
 
                 # Search for the goal name
                 if goal_name.lower() in text.lower():
-                    start_index = text.lower().find(goal_name,lower())    # Find goal name
+                    start_index = text.lower().find(goal_name.lower())    # Find goal name
                     #print(start_index)
 
                     # Extract from goal onward
