@@ -5,7 +5,7 @@ import os
 
 
 upload ="uploaded_file"
-#os.makedirs(upload, exist_ok=True)
+os.makedirs(upload, exist_ok=True)
 st.set_page_config(page_title="cybersecurity",page_icon="🔐",)
 st.logo("images/auto2.jpg")
 st.sidebar.success("Select a Page Aabove")
@@ -62,6 +62,7 @@ st.header("Enter your PS Number for Search.")
 
 a=st.text_input("PS Number",key="ps_number")
 user=["40037840","40037842","40037797"]
+lfiles=os.listdir(upload) 
 
 if a:
     if a in user:
@@ -75,11 +76,12 @@ if a:
 
         if st.button("Search"):
             if goal_name:
-                if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
-                    st.error("Kindly Upload a File before initializing the search")
-                    st.error("No files uploaded. Please upload files first on the Fileuploader Page.")
+                #if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
+                if lfiles:
+                    #st.error("Kindly Upload a File before initializing the search")
+                    #st.error("No files uploaded. Please upload files first on the Fileuploader Page.")
 
-                else:
+                
                     
                     for file in os.listdir(upload):
                     #if file:
@@ -99,6 +101,11 @@ if a:
 
                     for a in error:
                         st.error(f"No matching goal'found in this file:{a}")
+
+                else:
+                    st.error("Kindly Upload a File before initializing the search")
+                    st.error("No files uploaded. Please upload files first on the Fileuploader Page.")
+
 
             else:
                 st.error("First Enter the Goal Name")
