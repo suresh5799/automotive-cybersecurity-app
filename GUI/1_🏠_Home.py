@@ -4,8 +4,10 @@ import os
 
 
 
-upload ="uploaded_file"
-os.makedirs(upload, exist_ok=True)
+#upload ="uploaded_file"
+#os.makedirs(upload, exist_ok=True)
+
+upload="D:\OneDrive - LTTS\GUI\Client"
 st.set_page_config(page_title="cybersecurity",page_icon="🔐",)
 st.logo("images/auto2.jpg")
 st.sidebar.success("Select a Page Above")
@@ -85,7 +87,8 @@ if a:
                     
                     for file in os.listdir(upload):
                     #if file:
-                        file_path = os.path.join(upload,file)
+                        #file_path = os.path.join(upload,file)
+                        file_path = os.join(upload,file)
                         pdf_text = extract_text_from_pdf(file_path,goal_name)
                         if pdf_text:
                             for file,text in pdf_text.items():
