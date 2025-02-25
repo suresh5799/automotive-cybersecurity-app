@@ -3,7 +3,8 @@ import PyPDF2 as pdf
 import os
 
 
-upload="uploaded_file"
+#upload="uploaded_file"
+upload="D:\OneDrive - LTTS\GUI\Client"
 
 st.logo("images/auto2.jpg")
 
