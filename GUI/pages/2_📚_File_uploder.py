@@ -7,8 +7,9 @@ import os
 
 
 #it willcreate a folder for storing a files
-upload = "uploaded_file"
-os.makedirs(upload, exist_ok=True)
+#upload = "uploaded_file"
+#os.makedirs(upload, exist_ok=True)
+upload="D:\OneDrive - LTTS\GUI\Client"
 
 st.logo("images/auto2.jpg")
 
