@@ -87,8 +87,8 @@ if a:
                     
                     for file in os.listdir(upload):
                     #if file:
-                        #file_path = os.path.join(upload,file)
-                        file_path = os.join(upload,file)
+                        file_path = os.path.join(upload,file)
+                        #file_path = os.join(upload,file)
                         pdf_text = extract_text_from_pdf(file_path,goal_name)
                         if pdf_text:
                             for file,text in pdf_text.items():
