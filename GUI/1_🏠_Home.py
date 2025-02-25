@@ -4,10 +4,10 @@ import os
 
 
 
-#upload ="uploaded_file"
-#os.makedirs(upload, exist_ok=True)
+upload ="uploaded_file"
+os.makedirs(upload, exist_ok=True)
 
-upload="D:\OneDrive - LTTS\GUI\Client"
+#upload="D:\OneDrive - LTTS\GUI\Client"
 st.set_page_config(page_title="cybersecurity",page_icon="🔐",)
 st.logo("images/auto2.jpg")
 st.sidebar.success("Select a Page Above")
