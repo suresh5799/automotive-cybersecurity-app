@@ -75,7 +75,7 @@ if a:
 
         #Here asking a goal name to user
         goal_name1 = st.text_input("e.g., Secure Authenticatio or secure flash")
-        goal_name=goal_name.lower() 
+        goal_name=goal_name1.lower() 
         if st.button("Search"):
             if goal_name:
                 #if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
