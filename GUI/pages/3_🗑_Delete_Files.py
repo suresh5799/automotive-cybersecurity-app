@@ -24,10 +24,10 @@ def list_files():
     else:
         []
 
-st.header("Enter yout PS Number for Delete a files")
+st.header("Enter yout User ID for Deleting a file")
 
-a=st.text_input("PS Number",key="ps_number")
-user=["40037840","40037842","40037797","40036090"]
+a=st.text_input("",placeholder="User ID",key="ps_number")
+user=["40037840","40037842","40037797","40036090","40024959"]
 
 if a:
     if a in user:
@@ -38,7 +38,7 @@ if a:
         if os.path.exists(upload):
             files_in_folder=list_files()
             if files_in_folder:
-                st.write("These are the Available files.")
+                st.write("Available files.")
                 for file in files_in_folder:
                     st.write(file)
 
@@ -62,4 +62,4 @@ if a:
         st.error("Unauthorized! Only specific users can upload files.")
 
 elif a:
-    st.error("Please Enter Your PS Number to Proceed.")
+    st.error("Please Enter Your User ID to Proceed.")
