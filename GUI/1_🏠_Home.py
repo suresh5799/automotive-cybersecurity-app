@@ -60,7 +60,7 @@ def extract_text_from_pdf(file_path,goal_name):
                         #if goal_name!=b:
                         t=t+1
 
-st.header("Enter your PS Number for Search.")
+st.header("Enter your User ID.")
 
 a=st.text_input("PS Number",key="ps_number")
 user=["40037840","40037842","40037797","40036090","40035022"]
@@ -71,11 +71,11 @@ if a:
         error=[]
 
         # Search Functionality
-        st.subheader("Search for Requirements by Goal Name")
+        st.subheader("Enter the Goal Name")
 
         #Here asking a goal name to user
-        goal_name = st.text_input("Enter Goal Name (e.g., Secure Authenticatio or secure flash)")
-
+        goal_name1 = st.text_input("e.g., Secure Authenticatio or secure flash")
+        goal_name=goal_name.lower() 
         if st.button("Search"):
             if goal_name:
                 #if "uploaded_file" not in st.session_state or not st.session_state["uploaded_file"]:
@@ -111,9 +111,9 @@ if a:
 
 
             else:
-                st.error("First Enter the Goal Name")
+                st.error("Enter the Goal Name")
 
     else:
-        st.error("Unauthorized PS Number. You are not allowed to Search.")
+        st.error("Unauthorized User ID. You are not allowed to Search.")
 elif a:
-    st.error("Please Enter Your PS Number to Proceed.")
+    st.error("Please Enter Your User ID to Proceed.")
