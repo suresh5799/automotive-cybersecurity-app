@@ -18,7 +18,7 @@ def file_exists(filename):
     return os.path.exists(os.path.join(upload,filename))
 
 #title
-st.header("Enter your User ID for Uploding pdf")
+st.header("Enter your User ID for Upload PDF")
 #st.header("Enter your PS Number for Search.")
 
 a=st.text_input("",placeholder="User ID",key="ps_number")
