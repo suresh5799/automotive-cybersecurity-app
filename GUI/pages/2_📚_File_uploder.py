@@ -18,11 +18,11 @@ def file_exists(filename):
     return os.path.exists(os.path.join(upload,filename))
 
 #title
-st.header("Enter your ps Number for Uploding pdf")
+st.header("Enter your User ID for Uploding pdf")
 #st.header("Enter your PS Number for Search.")
 
-a=st.text_input("PS Number",key="ps_number")
-user=["40037840","40037842","40037797","40036090"]
+a=st.text_input("",placeholder="User ID",key="ps_number")
+user=["40037840","40037842","40037797","40036090","40024959"]
 
 #a=st.text_input("Ps Number",key="ps_number")
 
@@ -50,6 +50,6 @@ if a:
         st.error("Unauthorized! Only specific users can upload files.")
 
 elif a:
-    st.error("Please Enter Your PS Number to Proceed.")
+    st.error("Please Enter Your User ID to Proceed.")
 
 
